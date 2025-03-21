@@ -33,7 +33,7 @@ class SeoOpenGraphTest extends TestCase
         parent::setUp();
 
         $this->seoOpenGraph = new SeoOpenGraph(
-            $this->getSeoHelperConfig()
+            $this->getSeoHelperConfig(),
         );
     }
 
@@ -202,7 +202,7 @@ class SeoOpenGraphTest extends TestCase
     {
         $properties = [
             'locale'           => 'en_GB',
-            'profile:username' => 'ARCANEDEV'
+            'profile:username' => 'ARCANEDEV',
         ];
 
         $expectations = [];
@@ -247,7 +247,7 @@ class SeoOpenGraphTest extends TestCase
         foreach ($locales as $locale) {
             static::assertStringContainsString(
                 '<meta property="og:locale" content="' . $locale . '">',
-                $this->seoOpenGraph->setLocale($locale)->render()
+                $this->seoOpenGraph->setLocale($locale)->render(),
             );
         }
     }

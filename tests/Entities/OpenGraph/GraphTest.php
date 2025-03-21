@@ -34,7 +34,7 @@ class GraphTest extends TestCase
         parent::setUp();
 
         $this->og = new Graph(
-            $this->getSeoHelperConfig('open-graph')
+            $this->getSeoHelperConfig('open-graph'),
         );
     }
 
@@ -178,7 +178,7 @@ class GraphTest extends TestCase
     {
         $properties = [
             'locale'           => 'en_GB',
-            'profile:username' => 'ARCANEDEV'
+            'profile:username' => 'ARCANEDEV',
         ];
 
         $expectations = [];
@@ -203,7 +203,7 @@ class GraphTest extends TestCase
         foreach ($locales as $locale) {
             static::assertStringContainsString(
                 '<meta property="og:locale" content="' . $locale . '">',
-                $this->og->setLocale($locale)->render()
+                $this->og->setLocale($locale)->render(),
             );
         }
     }

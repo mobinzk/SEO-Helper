@@ -51,7 +51,7 @@ class MetaTest extends TestCase
     public function it_can_valid(): void
     {
         $validMetas = [
-            Meta::make('name', 'Hello world')
+            Meta::make('name', 'Hello world'),
         ];
 
         foreach ($validMetas as $meta) {
@@ -75,22 +75,22 @@ class MetaTest extends TestCase
     {
         static::assertSame(
             '<meta name="name" content="Hello world">',
-            Meta::make('name', 'Hello world')->render()
+            Meta::make('name', 'Hello world')->render(),
         );
 
         static::assertSame(
             '<meta name="name" content="Hello world">',
-            (string) Meta::make('name', 'Hello world')
+            (string) Meta::make('name', 'Hello world'),
         );
 
         static::assertSame(
             '<meta name="viewport" content="width=device-width, initial-scale=1">',
-            Meta::make('viewport', 'width=device-width, initial-scale=1')->render()
+            Meta::make('viewport', 'width=device-width, initial-scale=1')->render(),
         );
 
         static::assertSame(
             '<link rel="author" href="https://plus.google.com/+ArcanedevNetMaroc">',
-            Meta::make('author', 'https://plus.google.com/+ArcanedevNetMaroc')->render()
+            Meta::make('author', 'https://plus.google.com/+ArcanedevNetMaroc')->render(),
         );
     }
 
@@ -101,14 +101,14 @@ class MetaTest extends TestCase
 
         static::assertSame(
             '<meta name="say:hello" content="Hello World">',
-            $meta->render()
+            $meta->render(),
         );
 
         $meta = Meta::make('hello', 'Hello World');
 
         static::assertSame(
             '<meta name="say:hello" content="Hello World">',
-            $meta->setPrefix('say:')->render()
+            $meta->setPrefix('say:')->render(),
         );
     }
 
@@ -120,7 +120,7 @@ class MetaTest extends TestCase
 
         static::assertSame(
             '<meta name="Awesome-name" content="Harmless alert(&quot;Danger Zone&quot;);">',
-            Meta::make($name, $content)->render()
+            Meta::make($name, $content)->render(),
         );
     }
 
@@ -131,7 +131,7 @@ class MetaTest extends TestCase
 
         static::assertSame(
             '<meta property="og:title" content="Hello World">',
-            $meta->render()
+            $meta->render(),
         );
     }
 
@@ -145,7 +145,7 @@ class MetaTest extends TestCase
 
         static::assertSame(
             '<meta property="og:title" content="Hello World">',
-            $meta->render()
+            $meta->render(),
         );
     }
 

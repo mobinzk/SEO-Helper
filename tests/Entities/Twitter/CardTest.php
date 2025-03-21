@@ -35,7 +35,7 @@ class CardTest extends TestCase
         parent::setUp();
 
         $this->card = new Card(
-            $this->getSeoHelperConfig('twitter')
+            $this->getSeoHelperConfig('twitter'),
         );
     }
 
@@ -69,7 +69,7 @@ class CardTest extends TestCase
     public function it_can_set_type_and_render(): void
     {
         $supported = [
-            'app', 'gallery', 'photo', 'player', 'product', 'summary', 'summary_large_image'
+            'app', 'gallery', 'photo', 'player', 'product', 'summary', 'summary_large_image',
         ];
 
         foreach ($supported as $type) {

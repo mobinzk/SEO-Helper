@@ -34,7 +34,7 @@ class WebmastersTest extends TestCase
         parent::setUp();
 
         $this->webmasters = new Webmasters(
-            $this->getSeoHelperConfig('webmasters')
+            $this->getSeoHelperConfig('webmasters'),
         );
     }
 
@@ -85,7 +85,7 @@ class WebmastersTest extends TestCase
     public function it_can_make_and_add(): void
     {
         $this->webmasters = Webmasters::make([
-            'google'  => 'site-verification-code'
+            'google'  => 'site-verification-code',
         ]);
 
         $this->webmasters->add('bing', 'site-verification-code');
@@ -105,7 +105,7 @@ class WebmastersTest extends TestCase
     public function it_can_skip_unsupported_webmasters(): void
     {
         $this->webmasters = Webmasters::make([
-            'duckduckgo'  => 'site-verification-code'
+            'duckduckgo'  => 'site-verification-code',
         ]);
 
         static::assertEmpty($this->webmasters->render());

@@ -103,7 +103,7 @@ class Title implements TitleContract
             'default'   => $title,
             'site-name' => $siteName,
             'separator' => $separator,
-            'first'     => true
+            'first'     => true,
         ]);
     }
 
@@ -203,7 +203,7 @@ class Title implements TitleContract
     public function setSeparator(?string $separator): static
     {
         if ($separator !== null) {
-            $this->separator = trim($separator);
+            $this->separator = mb_trim($separator);
         }
 
         return $this;
@@ -265,7 +265,7 @@ class Title implements TitleContract
     public function render(): string
     {
         $title = $this->prepareTitleOutput(
-            $this->isTitleFirst() ? $this->renderTitleFirst() : $this->renderTitleLast()
+            $this->isTitleFirst() ? $this->renderTitleFirst() : $this->renderTitleLast(),
         );
 
         return HtmlElement::withTag('title')->html($title)->toHtml();
@@ -325,7 +325,7 @@ class Title implements TitleContract
      */
     private function checkTitle(string &$title): void
     {
-        $title = trim($title);
+        $title = mb_trim($title);
 
         if (empty($title)) {
             throw new InvalidArgumentException('The title is required and must not be empty.');
@@ -357,7 +357,7 @@ class Title implements TitleContract
         return Str::of($this->getTitleOnly())
             ->when(
                 $this->hasSiteName(),
-                fn(Stringable $title): Stringable => $title->append($this->renderSeparator(), $this->getSiteName())
+                fn(Stringable $title): Stringable => $title->append($this->renderSeparator(), $this->getSiteName()),
             )
             ->toString()
         ;
@@ -371,7 +371,7 @@ class Title implements TitleContract
         return Str::of($this->getTitleOnly())
             ->when(
                 $this->hasSiteName(),
-                fn(Stringable $title): Stringable => $title->prepend($this->getSiteName(), $this->renderSeparator())
+                fn(Stringable $title): Stringable => $title->prepend($this->getSiteName(), $this->renderSeparator()),
             )
             ->toString()
         ;
@@ -386,7 +386,7 @@ class Title implements TitleContract
             Str::limit(strip_tags($output), $this->getMax()),
             ENT_QUOTES,
             'UTF-8',
-            false
+            false,
         );
     }
 }

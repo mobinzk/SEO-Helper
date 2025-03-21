@@ -59,7 +59,7 @@ abstract class TestCase extends BaseTestCase
         // Keywords
         $config->set('seo-helper.keywords', [
             'default'   => [
-                'keyword-1', 'keyword-2', 'keyword-3', 'keyword-4', 'keyword-5'
+                'keyword-1', 'keyword-2', 'keyword-3', 'keyword-4', 'keyword-5',
             ],
         ]);
 

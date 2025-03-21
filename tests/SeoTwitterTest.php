@@ -33,7 +33,7 @@ class SeoTwitterTest extends TestCase
         parent::setUp();
 
         $this->seoTwitter = new SeoTwitter(
-            $this->getSeoHelperConfig()
+            $this->getSeoHelperConfig(),
         );
     }
 

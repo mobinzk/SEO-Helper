@@ -171,21 +171,21 @@ class SeoHelperTest extends TestCase
 
         static::assertStringContainsString(
             "<title>{$title} - {$siteName}</title>",
-            $this->seoHelper->render()
+            $this->seoHelper->render(),
         );
 
         $this->seoHelper->hideSiteName();
 
         static::assertStringContainsString(
             "<title>{$title}</title>",
-            $this->seoHelper->render()
+            $this->seoHelper->render(),
         );
 
         $this->seoHelper->showSiteName();
 
         static::assertStringContainsString(
             "<title>{$title} - {$siteName}</title>",
-            $this->seoHelper->render()
+            $this->seoHelper->render(),
         );
     }
 
@@ -231,7 +231,7 @@ class SeoHelperTest extends TestCase
 
         $expectations = [
             '<meta property="og:image" content="' . $imageUrl . '">',
-            '<meta name="twitter:image" content="' . $imageUrl . '">'
+            '<meta name="twitter:image" content="' . $imageUrl . '">',
         ];
 
         $rendered = $this->seoHelper->render();
@@ -248,7 +248,7 @@ class SeoHelperTest extends TestCase
 
         $expectations = [
             '<link rel="canonical" href="' . $url . '">',
-            '<meta property="og:url" content="' . $url . '">'
+            '<meta property="og:url" content="' . $url . '">',
         ];
 
         $rendered = $this->seoHelper->render();

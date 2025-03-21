@@ -112,7 +112,7 @@ class Description implements DescriptionContract
      */
     public function set(string $content): static
     {
-        $this->content = trim(strip_tags($content));
+        $this->content = mb_trim(strip_tags($content));
 
         return $this;
     }
@@ -175,7 +175,7 @@ class Description implements DescriptionContract
     {
         if ($max <= 0) {
             throw new InvalidArgumentException(
-                'The description maximum length must be greater 0.'
+                'The description maximum length must be greater 0.',
             );
         }
     }

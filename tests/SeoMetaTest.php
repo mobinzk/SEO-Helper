@@ -55,7 +55,7 @@ class SeoMetaTest extends TestCase
         parent::setUp();
 
         $this->seoMeta = new SeoMeta(
-            $this->getSeoHelperConfig()
+            $this->getSeoHelperConfig(),
         );
         $this->seoMeta->setUrl($this->baseUrl);
     }
@@ -248,7 +248,7 @@ class SeoMetaTest extends TestCase
     {
         $expectations = [
             '<meta name="robots" content="noindex, nofollow">',
-            '<link rel="canonical" href="' . $this->baseUrl . '">'
+            '<link rel="canonical" href="' . $this->baseUrl . '">',
         ];
 
         foreach ($expectations as $expected) {
@@ -284,21 +284,21 @@ class SeoMetaTest extends TestCase
 
         static::assertStringNotContainsString(
             '<meta name="copyright" content="ARCANEDEV">',
-            $this->seoMeta->render()
+            $this->seoMeta->render(),
         );
 
         $this->seoMeta->removeMeta('expires');
 
         static::assertStringNotContainsString(
             '<meta name="expires" content="never">',
-            $this->seoMeta->render()
+            $this->seoMeta->render(),
         );
 
         $this->seoMeta->addMeta('viewport', 'width=device-width, initial-scale=1.0');
 
         static::assertStringContainsString(
             '<meta name="viewport" content="width=device-width, initial-scale=1.0">',
-            $this->seoMeta->render()
+            $this->seoMeta->render(),
         );
 
         $this->seoMeta->addMetas([

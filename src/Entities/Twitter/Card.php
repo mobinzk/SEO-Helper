@@ -252,7 +252,7 @@ class Card implements CardContract
      */
     private function checkType(string &$type): void
     {
-        $type = mb_strtolower(trim($type));
+        $type = mb_strtolower(mb_trim($type));
 
         if ( ! in_array($type, $this->types())) {
             throw new InvalidTwitterCardException("The Twitter card type [{$type}] is not supported.");

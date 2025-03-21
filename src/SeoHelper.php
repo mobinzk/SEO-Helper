@@ -48,7 +48,7 @@ class SeoHelper implements SeoHelperContract
     public function __construct(
         SeoMetaContract $seoMeta,
         SeoOpenGraphContract $seoOpenGraph,
-        SeoTwitterContract $seoTwitter
+        SeoTwitterContract $seoTwitter,
     ) {
         $this->setSeoMeta($seoMeta);
         $this->setSeoOpenGraph($seoOpenGraph);
@@ -268,7 +268,7 @@ class SeoHelper implements SeoHelperContract
     public function renderHtml(): HtmlString
     {
         return new HtmlString(
-            $this->render()
+            $this->render(),
         );
     }
 

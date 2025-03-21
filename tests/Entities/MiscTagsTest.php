@@ -34,7 +34,7 @@ class MiscTagsTest extends TestCase
         parent::setUp();
 
         $this->misc = new MiscTags(
-            $this->getMiscConfig()
+            $this->getMiscConfig(),
         );
 
         $this->misc->setUrl($this->baseUrl);
@@ -103,7 +103,7 @@ class MiscTagsTest extends TestCase
         $publisher = 'https://plus.google.com/+PublisherProfile';
 
         $this->misc = new MiscTags([
-            'default' => compact('author', 'publisher')
+            'default' => compact('author', 'publisher'),
         ]);
 
         $expectations = [
@@ -135,7 +135,7 @@ class MiscTagsTest extends TestCase
 
         $this->misc = new MiscTags(array_merge(
             $this->getMiscConfig(),
-            ['default' => compact('author', 'publisher')]
+            ['default' => compact('author', 'publisher')],
         ));
 
         static::assertSame(implode(PHP_EOL, [
@@ -185,7 +185,7 @@ class MiscTagsTest extends TestCase
 
         static::assertSame(
             '<meta name="document-rating" content="Safe For Work">',
-            $this->misc->render()
+            $this->misc->render(),
         );
 
         $this->misc->remove('document-rating');

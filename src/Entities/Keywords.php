@@ -177,6 +177,6 @@ class Keywords implements KeywordsContract
      */
     private function clean(string $value): string
     {
-        return trim(strip_tags($value));
+        return mb_trim(strip_tags($value));
     }
 }

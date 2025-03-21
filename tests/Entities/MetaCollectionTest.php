@@ -94,7 +94,7 @@ class MetaCollectionTest extends TestCase
 
         static::assertSame(
             '<link rel="canonical" href="' . $this->baseUrl . '">',
-            $this->metas->render()
+            $this->metas->render(),
         );
     }
 }

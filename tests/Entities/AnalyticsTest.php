@@ -42,7 +42,7 @@ class AnalyticsTest extends TestCase
         parent::setUp();
 
         $this->analytics = new Analytics(
-            $this->getSeoHelperConfig('analytics', [])
+            $this->getSeoHelperConfig('analytics', []),
         );
     }
 

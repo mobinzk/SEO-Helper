@@ -36,7 +36,7 @@ class TitleTest extends TestCase
         parent::setUp();
 
         $this->title = new Title(
-            $this->getTitleConfig()
+            $this->getTitleConfig(),
         );
     }
 
@@ -71,7 +71,7 @@ class TitleTest extends TestCase
     {
         static::assertSame(
             $this->getDefaultTitle(),
-            $this->title->getTitleOnly()
+            $this->title->getTitleOnly(),
         );
     }
 
@@ -90,7 +90,7 @@ class TitleTest extends TestCase
     {
         static::assertSame(
             $this->getDefaultSiteName(),
-            $this->title->getSiteName()
+            $this->title->getSiteName(),
         );
     }
 
@@ -109,7 +109,7 @@ class TitleTest extends TestCase
     {
         static::assertSame(
             $this->getDefaultSeparator(),
-            $this->title->getSeparator()
+            $this->title->getSeparator(),
         );
     }
 
@@ -124,7 +124,7 @@ class TitleTest extends TestCase
         $separator = ' _ ';
         $this->title->setSeparator($separator);
 
-        static::assertSame(trim($separator), $this->title->getSeparator());
+        static::assertSame(mb_trim($separator), $this->title->getSeparator());
     }
 
     #[Test]
@@ -132,7 +132,7 @@ class TitleTest extends TestCase
     {
         static::assertSame(
             Arr::get($this->getTitleConfig(), 'first', true),
-            $this->title->isTitleFirst()
+            $this->title->isTitleFirst(),
         );
     }
 

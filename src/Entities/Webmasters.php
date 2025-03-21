@@ -35,7 +35,7 @@ class Webmasters implements WebmastersContract
         'bing'      => 'msvalidate.01',
         'alexa'     => 'alexaVerifyID',
         'pinterest' => 'p:domain_verify',
-        'yandex'    => 'yandex-verification'
+        'yandex'    => 'yandex-verification',
     ];
 
     /**

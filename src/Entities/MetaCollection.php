@@ -23,7 +23,7 @@ class MetaCollection extends AbstractMetaCollection
      */
     protected array $ignored = [
         'description',
-        'keywords'
+        'keywords',
     ];
 
     /* -----------------------------------------------------------------

@@ -34,7 +34,7 @@ class KeywordsTest extends TestCase
         parent::setUp();
 
         $this->keywords = new Keywords(
-            $this->getKeywordsConfig()
+            $this->getKeywordsConfig(),
         );
     }
 
@@ -56,7 +56,7 @@ class KeywordsTest extends TestCase
         $expectations = [
             Renderable::class,
             KeywordsContract::class,
-            Keywords::class
+            Keywords::class,
         ];
 
         foreach ($expectations as $expected) {

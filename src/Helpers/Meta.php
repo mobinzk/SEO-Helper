@@ -164,7 +164,7 @@ class Meta implements MetaContract
     {
         return in_array($this->name, [
             'alternate', 'archives', 'author', 'canonical', 'first', 'help', 'icon', 'index', 'last',
-            'license', 'next', 'nofollow', 'noreferrer', 'pingback', 'prefetch', 'prev', 'publisher'
+            'license', 'next', 'nofollow', 'noreferrer', 'pingback', 'prefetch', 'prev', 'publisher',
         ]);
     }
 
@@ -174,7 +174,7 @@ class Meta implements MetaContract
     private function getName(bool $prefixed = true): string
     {
         return $this->clean(
-            $prefixed ? $this->prefix . $this->name : $this->name
+            $prefixed ? $this->prefix . $this->name : $this->name,
         );
     }
 
@@ -185,7 +185,7 @@ class Meta implements MetaContract
      */
     private function setName(string $name): static
     {
-        $name       = trim(strip_tags($name));
+        $name       = mb_trim(strip_tags($name));
         $this->name = str_replace([' '], '-', $name);
 
         return $this;
@@ -211,7 +211,7 @@ class Meta implements MetaContract
         if (is_array($content)) {
             $this->content = $content;
         } elseif (is_string($content)) {
-            $this->content = trim($content);
+            $this->content = mb_trim($content);
         }
 
         return $this;
@@ -254,7 +254,7 @@ class Meta implements MetaContract
         if ( ! in_array($name, $allowed)) {
             throw new InvalidArgumentException(
                 "The meta name property [{$name}] is not supported, " .
-                "the allowed name properties are ['" . implode("', '", $allowed) . "']."
+                "the allowed name properties are ['" . implode("', '", $allowed) . "'].",
             );
         }
 

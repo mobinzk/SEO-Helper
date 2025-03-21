@@ -26,7 +26,7 @@ trait AssertsHtmlStrings
         static::assertEqualsCanonicalizing(
             static::convertToDomDocument($expected),
             static::convertToDomDocument((string) $actual),
-            $message
+            $message,
         );
     }
 

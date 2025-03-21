@@ -36,7 +36,7 @@ class DescriptionTest extends TestCase
         parent::setUp();
 
         $this->description = new Description(
-            $this->getDescriptionConfig()
+            $this->getDescriptionConfig(),
         );
     }
 
@@ -123,7 +123,7 @@ class DescriptionTest extends TestCase
     public function it_can_render(): void
     {
         $this->description->set(
-            $description = 'Cool description about this package'
+            $description = 'Cool description about this package',
         );
 
         $expected = '<meta name="description" content="' . $description . '">';

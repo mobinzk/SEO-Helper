@@ -138,7 +138,7 @@ abstract class AbstractMetaCollection extends Collection implements MetaCollecti
      */
     protected static function prepareName(array $names): array
     {
-        return array_map(fn($name) => mb_strtolower(trim($name)), $names);
+        return array_map(fn($name) => mb_strtolower(mb_trim($name)), $names);
     }
 
     /**
