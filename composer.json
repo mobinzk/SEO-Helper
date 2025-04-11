@@ -19,7 +19,7 @@
     "require": {
         "php": "^8.2",
         "arcanedev/php-html": "dev-l12-compatibility",
-        "arcanedev/support": "^11.0"
+        "arcanedev/support": "dev-l12-compatibility"
     },
     "require-dev": {
         "ext-dom": "*",
@@ -65,6 +65,10 @@
         {
             "type": "vcs",
             "url": "https://github.com/laravel-shift/php-html.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/mobinzk/Support.git"
         }
     ]
 }
