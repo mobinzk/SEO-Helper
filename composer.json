@@ -18,7 +18,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "arcanedev/php-html": "^8.0",
+        "arcanedev/php-html": "dev-l12-compatibility",
         "arcanedev/support": "^11.0"
     },
     "require-dev": {
@@ -60,5 +60,11 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/laravel-shift/php-html.git"
+        }
+    ]
 }
