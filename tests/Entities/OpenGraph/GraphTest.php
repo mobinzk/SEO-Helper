@@ -68,9 +68,9 @@ class GraphTest extends TestCase
     public function it_can_render_defaults(): void
     {
         $output   = $this->og->render();
-        $expected = '<meta property="og:type" content="website">' .
-            '<meta property="og:title" content="Default Open Graph title">' .
-            '<meta property="og:description" content="Default Open Graph description">';
+        $expected = '<meta property="og:type" content="website">'
+            . '<meta property="og:title" content="Default Open Graph title">'
+            . '<meta property="og:description" content="Default Open Graph description">';
 
         static::assertHtmlStringEqualsHtmlString($expected, $output);
     }

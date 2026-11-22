@@ -253,8 +253,8 @@ class Meta implements MetaContract
 
         if ( ! in_array($name, $allowed)) {
             throw new InvalidArgumentException(
-                "The meta name property [{$name}] is not supported, " .
-                "the allowed name properties are ['" . implode("', '", $allowed) . "'].",
+                "The meta name property [{$name}] is not supported, "
+                . "the allowed name properties are ['" . implode("', '", $allowed) . "'].",
             );
         }
 
